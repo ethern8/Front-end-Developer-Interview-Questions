@@ -17,25 +17,25 @@
 * What is your preferred development enviroment? (OS, Editor, Browsers, Tools etc.)
 * Can you describe your workflow when you create a web page?
 * Can you describe the difference between progressive enhancement and graceful degredation?
-	= They are essentially the same thing, but you start PE by creating something that is accessible to as large an audience on a variety of devices as possible and then enhance in a way that won't break the site for users who cannot access those features properly. This process, when done correctly ensures graceful degradation, or the ability of your site/app to degrade without breaking to support those lower ability-ed browsers/users.
+	> They are essentially the same thing, but you start PE by creating something that is accessible to as large an audience on a variety of devices as possible and then enhance in a way that won't break the site for users who cannot access those features properly. This process, when done correctly ensures graceful degradation, or the ability of your site/app to degrade without breaking to support those lower ability-ed browsers/users.
 
 	* Bonus points for the answer "no one can"
 	* Extra bonus points for describing feature detection
 
 * Explain what "Semantic HTML" means. (Taken from Wikipedia)
-	="Semantic HTML is the use of HTML markup to reinforce the semantics, or meaning, of the information in webpages rather than merely to define its presentation (look). Semantic HTML is processed by regular web browsers as well as by many other user agents. CSS is used to suggest its presentation to human users.""
+	> "Semantic HTML is the use of HTML markup to reinforce the semantics, or meaning, of the information in webpages rather than merely to define its presentation (look). Semantic HTML is processed by regular web browsers as well as by many other user agents. CSS is used to suggest its presentation to human users.""
 	 - http://en.wikipedia.org/wiki/Semantic_HTML
 
 * What does "minification" do?
-	= This can depend on the level of minification you are doing, but in general it removes comments/white space to decrease the file size. More aggressive approaches might replace long variable names with single letter variable names. This is an uglification of your code that makes it unreadable, but extremely compressed. You can also gzip it for faster file serving.
+	> This can depend on the level of minification you are doing, but in general it removes comments/white space to decrease the file size. More aggressive approaches might replace long variable names with single letter variable names. This is an uglification of your code that makes it unreadable, but extremely compressed. You can also gzip it for faster file serving.
 
 * Why is it better to serve site assets from multiple domains?
-	=Concurrent downloads because a browser will only download a certin number of resources per domain at a time. This can greatly decrease page load times.
+	> Concurrent downloads because a browser will only download a certin number of resources per domain at a time. This can greatly decrease page load times.
 	* How many resources will a browser download from a given domain at a time?
-		=Depends. IE6/7 will only pull 2 assets a time from one domain. I could not find specific #s for other browsers.
+		> Depends. IE6/7 will only pull 2 assets a time from one domain. I could not find specific #s for other browsers.
 
 * If you have 8 different stylesheets for a given design, how would you integrate them into the site?
-	= File Concat
+	> File Concat
 	* Looking for file concatenation.
 	* Points off for `@import`, unless it works in conjunction with a build system.
 
@@ -46,60 +46,61 @@
 	* Bonus points if it does not use JS.
 
 * What tools do you use to test your code's performance?
-	=PageSpeed/Yslow/HTML/CSS Validator
+	> PageSpeed/Yslow/HTML/CSS Validator
 
 * If you could master one technology this year, what would it be?
-	= Javascript testing
+	> Javascript testing
 
 * Name 3 ways to decrease page load. (perceived or actual load time)
-	= Concatentation,Minification,Gzip of assets.
-	= Removing/decreasing blocking scripts loading on the page as much as possible (Async tag where supported)
-	= Make sure pages are valid markup
+	> Concatentation,Minification,Gzip of assets.
+	> Removing/decreasing blocking scripts loading on the page as much as possible (Async tag where supported)
+	> Make sure pages are valid markup
 
 * Explain the importance of standards.
-	= Decreases different ways people can code to get the same output, at least in one browser.
-	= Decreases debugging time if code is more standardizd/familiar to you
-	= Consistency across browser rendering (If the browser is standard in its implementation of standards)
+	> Decreases different ways people can code to get the same output, at least in one browser.
+	> Decreases debugging time if code is more standardizd/familiar to you
+	> Consistency across browser rendering (If the browser is standard in its implementation of standards)
 
 ## HTML-Specific Questions:
 * What's a `doctype` do, and how many can you name?
-	=Declaration of the document's type, so a validator can parse the content effective. Also, for standards so you know and code the HTML page correctly.
-	= XHTML, HTML 4.01, Loose,  Transitional, Strict, HTML5 doctype <!DOCTYPE html>
+	> Declaration of the document's type, so a validator can parse the content effective. Also, for standards so you know and code the HTML page correctly.
+	> XHTML, HTML 4.01, Loose,  Transitional, Strict, HTML5 doctype <!DOCTYPE html>
 
 * What's the difference between standards mode and quirks mode?
-	= Standards will adhere to and validate based on the doctype specificed while quirks mode may not have a doctype defined or invalid markup used which causes the browser to render the document in a fallback type of way.
-	=In computing, quirks mode refers to a technique used by some web browsers for the sake of maintaining backward compatibility with web pages designed for older browsers, instead of strictly complying with W3C and IETF standards in standards mode. - From wikipedia
+	> Standards will adhere to and validate based on the doctype specificed while quirks mode may not have a doctype defined or invalid markup used which causes the browser to render the document in a fallback type of way.
+	> In computing, quirks mode refers to a technique used by some web browsers for the sake of maintaining backward compatibility with web pages designed for older browsers, instead of strictly complying with W3C and IETF standards in standards mode. - From wikipedia
 
 
 * What are the limitations when serving XHTML pages?
-	=Close all tags that you've opened in the same order and same case. Must conform to strict rules of XML when being parsed. Prior to IE9 would just render as html.
+	> Close all tags that you've opened in the same order and same case. Must conform to strict rules of XML when being parsed. Prior to IE9 would just render as html.
 	* Are there any problems with serving pages as `application/xhtml+xml`?
-		=Browser MAY parse the document as XML?
-		=Microsoft® Internet Explorer only supports XHTML if it is served with MIME media type text/html rather than the recommended application/xhtml+xml.
+		> Browser MAY parse the document as XML?
+		> Microsoft® Internet Explorer only supports XHTML if it is served with MIME media type text/html rather than the recommended application/xhtml+xml.
 
 * How do you serve a page with content in multiple languages?
-	=If a resource exists in multiple languages, the web server can choose which variant it serves based on the Accept-Language header delivered by the browser.
+	> If a resource exists in multiple languages, the web server can choose which variant it serves based on the Accept-Language header delivered by the browser.
 
 * Can you use XHTML syntax in HTML5? How do you use XML in HTML5?
-	=Yes. It can parse either HTML or XHTML and not choke. Match the mime-type of the content you're serving.
-	= use HTML syntax when sending pages as text/html
+	> Yes. It can parse either HTML or XHTML and not choke. Match the mime-type of the content you're serving.
+	> use HTML syntax when sending pages as text/html
 		use XHTML syntax when sending pages as application/xhtml+xml
 
 * What are `data-` attributes good for?
-	=Storing properties on a DOM element to be accessed at a later time.
-	=or Embedding custom non visible data to your HTML.
+	> Storing properties on a DOM element to be accessed at a later time.
+	> or Embedding custom non visible data to your HTML.
 
 * What are the content models in HTML4 and are they different in HTML5?
-	=http://nimbupani.com/content-models-in-html.html
+	> http://nimbupani.com/content-models-in-html.html
 
 * Consider HTML5 as an open web platform. What are the building blocks of HTML5?
-	= DOM APIs
-	= ? Discuss w/ Sam
+	> DOM APIs
+	> ? Discuss w/ Sam
 
 * Describe the difference between cookies, sessionStorage and localStorage.
-	= ? Discuss w/ Sam
+	> ? Discuss w/ Sam
 
 ## JS-Specific Questions
+
 * Which JavaScript libraries have you used?
  = jQuery, Underscore, Backbone
  		- Sub Mootools, Prototype
